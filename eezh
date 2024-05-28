@@ -438,9 +438,9 @@ internal_lparls () {
 	lparlsfield=""
 }
 
-lpardelete ()   { lpar="$1"; checklpar off "$lpar" && runandecho eval rmsyscfg -r lpar -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
+lpardelete () { lpar="$1"; checklpar off "$lpar" && runandecho eval rmsyscfg -r lpar -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
 
-lparpoweron ()   {
+lparpoweron () {
 	lpar=$1;
 	checklpar off "$lpar" && (
 		if [ -n "$2" ]; then
@@ -452,7 +452,7 @@ lparpoweron ()   {
 	)
 }
 
-lparpoweronsms ()   {
+lparpoweronsms () {
 	lpar="$1"
 	checklpar off "$lpar" && (
 		if [ -n "$2" ]; then
@@ -464,11 +464,11 @@ lparpoweronsms ()   {
 	)
 }
 
-lparrebootos ()   { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o osshutdown --immed --restart -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
+lparrebootos () { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o osshutdown --immed --restart -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
 
 lparreboothard () { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o shutdown --immed --restart -m \"`lparframelookup $lpar`\" -n  \"$lpar\"; }
 
-lparshutdownos ()   { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o osshutdown --immed -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
+lparshutdownos () { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o osshutdown --immed -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
 
 lparshutdownhard () { lpar="$1"; checklpar on "$lpar" && runandecho eval chsysstate -r lpar -o shutdown --immed -m \"`lparframelookup $lpar`\" -n \"$lpar\"; }
 
@@ -535,7 +535,7 @@ lparviorun () {
 	)
 }
 
-framepoweron ()  { frame="$1"; checkframe "$frame" "confirm" && runandecho eval chsysstate -m \"$frame\" -r sys -o on;  }
+framepoweron () { frame="$1"; checkframe "$frame" "confirm" && runandecho eval chsysstate -m \"$frame\" -r sys -o on;  }
 
 framepoweroff () { frame="$1"; checkframe "$frame" "confirm" && runandecho eval chsysstate -m \"$frame\" -r sys -o off; }
 
